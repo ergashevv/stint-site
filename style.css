@@ -1,0 +1,173 @@
+/* Stint — marketing site. Brand tokens from docs/02-BRAND.md, dark-first (the
+   app's native habitat is 3am). One accent (Signal orange), used sparingly.
+   System font (SF on Apple devices) to match the app. No em-dashes anywhere. */
+
+:root {
+  --canvas: #0E1116;
+  --surface: #171B21;
+  --surface-2: #1B2027;
+  --ink: #F1F2F5;
+  --ink2: #99A0AB;
+  --ink3: #626973;
+  --hairline: #242931;
+  --signal: #F0602F;
+  --signal-soft: #3A2018;
+  --cta: #F1F2F5;
+  --on-cta: #14171C;
+  --sky-night: #0A0C10;
+  --radius: 16px;
+  --pill: 999px;
+  --max: 1120px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    system-ui, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  height: 64px; display: flex; align-items: center;
+  background: rgba(14, 17, 22, 0.72);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+.wordmark { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 19px; letter-spacing: -0.02em; }
+.wordmark .mark { height: 22px; width: auto; display: block; }
+.wordmark .dot { color: var(--signal); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { color: var(--ink2); font-size: 15px; transition: color .2s ease; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--cta); color: var(--on-cta) !important;
+  padding: 9px 16px; border-radius: var(--pill); font-weight: 600; font-size: 14px;
+  transition: transform .2s cubic-bezier(.16,1,.3,1), opacity .2s ease;
+}
+.nav-cta:hover { opacity: .92; }
+.nav-cta:active { transform: scale(.97); }
+@media (max-width: 680px) { .nav-links .hide-sm { display: none; } }
+
+/* ---------- Buttons ---------- */
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--cta); color: var(--on-cta);
+  padding: 15px 26px; border-radius: var(--pill);
+  font-weight: 600; font-size: 16px;
+  transition: transform .2s cubic-bezier(.16,1,.3,1), opacity .2s ease;
+}
+.pill:hover { opacity: .93; }
+.pill:active { transform: translateY(1px) scale(.99); }
+.ghost { color: var(--ink2); font-weight: 500; font-size: 16px; transition: color .2s ease; }
+.ghost:hover { color: var(--ink); }
+
+/* ---------- Sections ---------- */
+section { padding: 96px 0; }
+.eyebrow { color: var(--ink3); font-size: 13px; font-weight: 500; letter-spacing: .01em; margin-bottom: 14px; }
+
+h1 { font-size: clamp(40px, 6.4vw, 64px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; }
+h2 { font-size: clamp(30px, 4.4vw, 44px); line-height: 1.06; letter-spacing: -0.03em; font-weight: 600; }
+.lead { color: var(--ink2); font-size: clamp(17px, 2.1vw, 19px); line-height: 1.55; max-width: 40ch; }
+
+/* Hero */
+.hero { padding-top: 72px; padding-bottom: 72px; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+.hero h1 { margin-bottom: 20px; }
+.hero .lead { margin-bottom: 30px; }
+.hero-actions { display: flex; align-items: center; gap: 22px; }
+.shot { border-radius: 34px; border: 1px solid var(--hairline); box-shadow: 0 40px 90px -30px rgba(0,0,0,.7); display: block; width: 100%; }
+.phone { max-width: 300px; margin: 0 auto; }
+.phone-right { justify-self: end; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .phone { max-width: 260px; }
+  .hero-actions { justify-content: flex-start; }
+}
+
+/* Manifesto band */
+.manifesto { background: var(--sky-night); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.manifesto .wrap { max-width: 760px; text-align: center; }
+.manifesto h2 { margin-bottom: 20px; }
+.manifesto p { color: var(--ink2); font-size: clamp(17px, 2.2vw, 20px); line-height: 1.6; max-width: 62ch; margin: 0 auto; }
+.manifesto .accent { color: var(--ink); }
+
+/* Feature split */
+.feature .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.feature.reverse .wrap .copy { order: 2; }
+.feature.reverse .wrap .art { order: 1; }
+.feature .copy h2 { margin-bottom: 18px; }
+.chip { display: inline-block; color: var(--signal); background: var(--signal-soft); font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: var(--pill); margin-bottom: 16px; }
+@media (max-width: 860px) {
+  .feature .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .feature.reverse .wrap .copy { order: 1; }
+  .feature.reverse .wrap .art { order: 2; }
+}
+
+/* Honesty band */
+.honesty { text-align: center; }
+.honesty h2 { max-width: 20ch; margin: 0 auto 18px; }
+.honesty p { color: var(--ink2); font-size: 18px; max-width: 52ch; margin: 0 auto; }
+.honesty .row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.tag { border: 1px solid var(--hairline); color: var(--ink2); border-radius: var(--pill); padding: 10px 18px; font-size: 15px; font-weight: 500; }
+
+/* Pricing */
+.pricing { text-align: center; }
+.pricing > .wrap > h2 { margin-bottom: 12px; }
+.pricing .sub { color: var(--ink2); margin-bottom: 44px; }
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 780px; margin: 0 auto; text-align: left; }
+.tier { border: 1px solid var(--hairline); border-radius: 22px; padding: 30px; background: var(--surface); }
+.tier.pro { border-color: color-mix(in srgb, var(--signal) 45%, var(--hairline)); }
+.tier .name { font-size: 15px; color: var(--ink2); font-weight: 600; }
+.tier .price { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; margin: 8px 0 4px; font-variant-numeric: tabular-nums; }
+.tier .price small { font-size: 15px; color: var(--ink3); font-weight: 500; }
+.tier ul { list-style: none; margin-top: 20px; display: grid; gap: 12px; }
+.tier li { color: var(--ink2); font-size: 15px; display: flex; gap: 10px; align-items: baseline; }
+.tier li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; flex: none; margin-top: 7px; background: var(--ink3); }
+.tier.pro li::before { background: var(--signal); }
+.pricing .fine { color: var(--ink3); font-size: 14px; margin-top: 28px; }
+@media (max-width: 680px) { .tiers { grid-template-columns: 1fr; } }
+
+/* Footer */
+footer { border-top: 1px solid var(--hairline); padding: 48px 0; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.foot-brand { display: flex; align-items: center; gap: 14px; }
+.foot-brand img { width: 44px; height: 44px; border-radius: 11px; display: block; }
+.foot-links { display: flex; gap: 24px; }
+.foot-links a { color: var(--ink2); font-size: 15px; transition: color .2s ease; }
+.foot-links a:hover { color: var(--ink); }
+.foot-note { color: var(--ink3); font-size: 14px; }
+
+/* Reveal on scroll. Progressive enhancement: content is visible by default, and
+   only the `reveal-on` class (added by JS, and never under reduced motion) opts
+   into the hidden-start. So if JS fails or is slow, nothing is ever blank. */
+.reveal { transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+body.reveal-on .reveal { opacity: 0; transform: translateY(18px); }
+body.reveal-on .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none; }
+}
+
+/* Legal pages */
+.legal { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+.legal a.back { color: var(--ink2); font-size: 15px; }
+.legal h1 { font-size: clamp(32px, 5vw, 44px); margin: 24px 0 8px; }
+.legal .updated { color: var(--ink3); font-size: 14px; margin-bottom: 40px; }
+.legal h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+.legal p, .legal li { color: var(--ink2); font-size: 16px; line-height: 1.7; margin-bottom: 12px; }
+.legal ul { padding-left: 20px; margin-bottom: 12px; }
+.legal strong { color: var(--ink); font-weight: 600; }
