@@ -13,16 +13,17 @@
   <main class="legal">
     <a class="back" href="/"><img class="mark" src="img/mark.png" alt="" style="height:16px;vertical-align:-2px;margin-right:6px;" />Stint</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated 24 July 2026</p>
+    <p class="updated">Last updated 2 September 2026</p>
 
-    <p>Stint is a planner for shift workers, made by the Stint team. This policy explains what Stint does and does not do with your information. The short version: <strong>Stint works entirely on your device.</strong> It has no account and collects nothing — unless you choose to sign in, which adds a private copy of your schedule so it syncs across your devices.</p>
+    <p>Stint is a planner for shift workers, made by the Stint team. This policy explains what Stint does and does not do with your information. The short version: <strong>your schedule lives on your device.</strong> Stint asks you to sign in with Apple once so your data is keyed to you and can come back on a new phone; after that the app works with no signal at all.</p>
 
-    <h2>On your device by default</h2>
-    <p>Stint has <strong>no account requirement and no analytics</strong>. Out of the box, your schedule, sleep settings, plans, pay rates and everything else you enter stay on your device. We never receive them, and nothing is required to use the app.</p>
+    <h2>On your device</h2>
+    <p>Stint has <strong>no analytics of any kind</strong>. The file on your phone is the original: your schedule, sleep settings, plans and pay rates are written there first, and every screen reads from it, so the app is fully usable offline once you have signed in.</p>
 
-    <h2>Stint account and sync (optional)</h2>
-    <p>If you <strong>sign in with Apple</strong>, Stint creates a private account and stores one copy of your schedule on Stint's backend (hosted on Supabase, on servers in the United States) so it syncs across your iPhone, iPad and Apple Watch. That copy holds the same schedule, sleep and pay information you see in the app. It is protected by row-level security, meaning <strong>only your signed-in account can read it</strong> — we never sell it, share it, profile it, or use it for anything but syncing it back to your own devices.</p>
-    <p>Signing in is entirely optional and the app is fully functional without it. You can remove everything at any time with <strong>Delete account</strong> in Settings, which erases the stored copy and your identity from the backend. Separately, across Apple devices on the same Apple ID, Stint keeps your schedule in sync through <strong>your own iCloud</strong> (Apple's key-value store) — that copy stays with Apple under your account and never passes through a Stint server. Reset all data in Settings clears it.</p>
+    <h2>Your Stint account and sync</h2>
+    <p>Signing in with Apple is <strong>required once</strong>, and it is what keys your data to you. Stint then keeps one private copy of your schedule on its own service, built on <strong>Cloudflare Workers and D1</strong>. That copy holds what you see in the app: your shifts and pattern, your plans, your sleep hours, your pay rates, and the optional name, job title and workplace you may have entered. The row is keyed to the Apple identifier your session token proves, and <strong>only that token can read it</strong> — we never sell it, share it, profile it, or use it for anything but syncing it back to your own devices.</p>
+    <p>What never leaves your device: <strong>sleep measured by Apple Health</strong>. It is stripped from every copy that goes off the phone, to iCloud and to Stint's service alike.</p>
+    <p>You can remove the stored copy at any time with <strong>Delete account</strong> in the You tab; the schedule on your phone is yours and stays. You can also take everything with you — the You tab exports a full JSON backup or a spreadsheet of your shifts. Separately, across Apple devices on the same Apple ID, Stint keeps your schedule in sync through <strong>your own iCloud</strong> (Apple's key-value store) — that copy stays with Apple under your account and never passes through a Stint server. Erase all my data clears it.</p>
 
     <h2>Health data</h2>
     <p>If you allow it, Stint <strong>reads your sleep data from Apple Health</strong> so its picture of your day matches what actually happened. This is used only on your device to improve Stint's own estimates. Stint <strong>never writes to Health, never shares health data, and never uses it for advertising or any other purpose</strong>. Turn it off at any time in Settings or in the Health app.</p>
@@ -33,11 +34,11 @@
     <h2>Sign in with Apple</h2>
     <p>Signing in uses <strong>Sign in with Apple</strong>, so there is no password. Stint receives only the identifier Apple provides and, if you share it, your name. That identifier is what your synced schedule is tied to. Sign out to disconnect on this device, or use Delete account to erase it from the backend entirely.</p>
 
-    <h2>Subscriptions</h2>
-    <p>Stint Pro is an auto-renewable subscription sold through Apple's App Store. <strong>Apple handles the payment</strong>; Stint never sees or stores your card or payment details. Purchase and renewal information is handled by Apple under Apple's terms.</p>
+    <h2>Price</h2>
+    <p>Stint is free, in full. There is no subscription, no trial, no one-time unlock and no advertising, and the app contains no payment code of any kind — so Stint never sees, stores or processes payment details.</p>
 
     <h2>No tracking, no ads</h2>
-    <p>The Stint app contains <strong>no advertising, no tracking, and no third-party SDKs</strong>. Nothing about you is sold, shared, or profiled. Stint does not use the Advertising Identifier and does not track you across apps or websites. If you sign in, your schedule is stored by our infrastructure provider (Supabase) purely to host that data for you; they process it on our behalf and never for their own purposes.</p>
+    <p>The Stint app contains <strong>no advertising, no tracking, and no third-party SDKs</strong>. Nothing about you is sold, shared, or profiled. Stint does not use the Advertising Identifier and does not track you across apps or websites. Your schedule is stored by our infrastructure provider (Cloudflare) purely to host that data for you; they process it on our behalf and never for their own purposes.</p>
 
     <h2>Children</h2>
     <p>Stint is a general-audience productivity app and is not directed at children. It does not knowingly collect any information from anyone, including children.</p>
